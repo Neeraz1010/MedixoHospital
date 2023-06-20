@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medixo Hospital</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Rubik:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body id="top" data-preloader>
+
+  <!-- *************** Header ******************* -->
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="images/logo.svg" width="136" height="46" alt="medixo home">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+
+          <a href="#" class="logo">
+            <img src="images/logo.svg" width="136" height="46" alt="Doclab home">
+          </a>
+
+          <a class="nav-close-btn" data-nav-toggler style="cursor: pointer;">
+            <img src="images/crossIcon.png" alt="Cross Icon" style="height: 30px;">
+          </a>
+
+        </div>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link title-md">Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link title-md">Doctors</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#serviceBar" class="navbar-link title-md">Services</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link title-md">Contact</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <a class="nav-open-btn" data-nav-toggler style="cursor: pointer;">
+        <img src="images/menuIcon.png" alt="Menu Icon" style="height: 30px;">
+      </a>
+
+      <a href="#" class="btn has-before title-md">Make Appointment</a>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+      <section class="section hero" style="background-image: url('images/hero-bg.png')">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <p class="hero-subtitle has-before">Welcome To Medixo</p>
+
+            <h1 class="headline-lg hero-title">
+              Find Your <br>
+              Doctor.
+            </h1>
+
+            <div class="hero-card">
+
+              <p class="title-lg card-text">
+                Daily Motivational Quotes
+              </p>
+
+              <div class="wrapper">
+                Use Js to print daily Motivational quotes in this division
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <figure class="hero-banner">
+            <img src="images/hero-banner.png" width="590" height="517" alt="hero banner">
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+      <!-- ***************** Service ********************** -->
+      <section class="service">
+        <div class="container" id="serviceBar">
+
+          <ul class="service-list">
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="images/icon-1.png" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+
+                <h3 class="headline-sm card-title">
+                  <a href="#">ENT</a>
+                </h3>
+
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing
+                </p>
+
+                <a href="#" class="btn-circle"><img src="images/arrowRight.png" alt="Arrow Pointing Right"
+                    style="height: 20px;"></a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="images/icon-2.png" width="71" height="71" alt="icon">
+                </div>
+
+                <h3 class="headline-sm card-title">
+                  <a href="#">Neurology</a>
+                </h3>
+
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing
+                </p>
+
+                <a href="#" class="btn-circle"><img src="images/arrowRight.png" alt="Arrow Pointing Right"
+                    style="height: 20px;"></a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="images/icon-3.png" width="71" height="71" alt="icon">
+                </div>
+
+                <h3 class="headline-sm card-title">
+                  <a href="#">Pulmonology</a>
+                </h3>
+
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing
+                </p>
+
+                <a href="#" class="btn-circle"><img src="images/arrowRight.png" alt="Arrow Pointing Right"
+                    style="height: 20px;"></a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="images/icon-4.png" width="71" height="71" alt="icon">
+                </div>
+
+                <h3 class="headline-sm card-title">
+                  <a href="#">Orthopedics</a>
+                </h3>
+
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing
+                </p>
+
+                <a href="#" class="btn-circle"><img src="images/arrowRight.png" alt="Arrow Pointing Right"
+                    style="height: 20px;"></a>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- ********************* About ******************** -->
+      <section class="section about">
+        <div class="container">
+
+          <div class="about-content">
+
+            <p class="section-subtitle title-lg has-after" id="about-label">About Us</p>
+
+            <h2 class="headline-md">Experienced Workers</h2>
+
+            <p class="section-text">
+              Aliquam faucibus, odio nec commodo aliquam, neque felis placerat dui, a porta ante lectus dapibus est.
+              Aliquam
+            </p>
+
+            <ul class="tab-list">
+
+              <li>
+                <button class="tab-btn active">Vision</button>
+              </li>
+
+              <li>
+                <button class="tab-btn">Mission</button>
+              </li>
+
+              <li>
+                <button class="tab-btn">Strategy</button>
+              </li>
+
+            </ul>
+
+            <p class="tab-text">
+              Aliquam faucibus, odio nec commodo aliquam, neque felis placerat dui, a porta ante lectus dapibus est.
+              Aliquam a bibendum mi, sed condimentum
+            </p>
+
+            <div class="wrapper">
+
+              <ul class="about-list">
+
+                <li class="about-item">
+                  <img src="images/tickIcon.png" alt="Mail Icon" style="height: 20px;">
+                  <span class="span">Sonsectetur adipisicing elit</span>
+                </li>
+
+                <li class="about-item">
+                  <img src="images/tickIcon.png" alt="Mail Icon" style="height: 20px;">
+                  <span class="span">Exercitation ullamco laboris</span>
+                </li>
+
+                <li class="about-item">
+                  <img src="images/tickIcon.png" alt="Mail Icon" style="height: 20px;">
+                  <span class="span">Eiusmod tempor incididunt</span>
+                </li>
+
+                <li class="about-item">
+                  <img src="images/tickIcon.png" alt="Mail Icon" style="height: 20px;">
+                  <span class="span">Aolore magna aliqua</span>
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+          <figure class="about-banner">
+            <img src="images/about-banner.png" width="554" height="678" alt="about banner" class="w-100">
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- ********************* Listing of Services ************************* -->
+      <section class="section listing">
+        <div class="container">
+
+          <ul class="grid-list">
+
+            <li>
+              <p class="section-subtitle title-lg" id="listing-label">Doctors Listing</p>
+
+              <h2 class="headline-md">Browse by specialist</h2>
+            </li>
+
+            <li>
+              <div class="listing-card">
+
+                <div class="card-icon">
+                  <img src="images/icon-1.png" width="71" height="71" alt="icon">
+                </div>
+
+                <div>
+                  <h3 class="headline-sm card-title">Psychiatry</h3>
+
+                  <p class="card-text">Porta velit</p>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="listing-card">
+
+                <div class="card-icon">
+                  <img src="images/icon-2.png" width="71" height="71" alt="icon">
+                </div>
+
+                <div>
+                  <h3 class="headline-sm card-title">Gynecology</h3>
+
+                  <p class="card-text">Mattis augue</p>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="listing-card">
+
+                <div class="card-icon">
+                  <img src="images/icon-4.png" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+
+                <div>
+                  <h3 class="headline-sm card-title">Pulmonology</h3>
+
+                  <p class="card-text">Mauris laoreet</p>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="listing-card">
+
+                <div class="card-icon">
+                  <img src="images/icon-5.png" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+
+                <div>
+                  <h3 class="headline-sm card-title">Orthopedics</h3>
+
+                  <p class="card-text">Convallis vulputate</p>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="listing-card">
+
+                <div class="card-icon">
+                  <img src="images/icon-6.png" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+
+                <div>
+                  <h3 class="headline-sm card-title">Pediatrics</h3>
+
+                  <p class="card-text">Posuere maecenas</p>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="listing-card">
+
+                <div class="card-icon">
+                  <img src="images/icon-7.png" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+
+                <div>
+                  <h3 class="headline-sm card-title">Osteology</h3>
+
+                  <p class="card-text">Nisi nullam</p>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+      <!-- ************************** Footer ***************************  -->
+      <footer class="footer" style="background-image: url('images/footer-bg.png')">
+        <div class="container">
+
+          <div class="section footer-top">
+
+            <div class="footer-brand">
+
+              <a href="#" class="logo">
+                <img src="images/logo.svg" width="136" height="46" alt="Medixo logo">
+              </a>
+
+              <ul class="contact-list has-after">
+
+                <li class="contact-item">
+
+                  <img src="images/mailIcon.png" alt="Mail Icon" style="height: 55px;">
+
+                  <div>
+                    <p>
+                      Main Email : <a href="mailto:contact@medixohospital.com"
+                        class="contact-link">contact@medixohospital.com</a>
+                    </p>
+
+                    <p>
+                      Inquiries : <a href="mailto:Info@medixohospital.com"
+                        class="contact-link">Info@medixohospital.com</a>
+                    </p>
+                  </div>
+
+                </li>
+
+                <li class="contact-item">
+
+                  <img src="images/phoneIcon.png" alt="Phone Icon" style="height: 55px;">
+
+                  <div>
+                    <p>
+                      Main Telephone : <a href="tel:9847950672" class="contact-link">9847950672</a>
+                    </p>
+
+                    <p>
+                      Inquiries : <a href="tel:9841361927" class="contact-link">9841361927</a>
+                    </p>
+                  </div>
+
+                </li>
+
+              </ul>
+
+            </div>
+
+            <div class="footer-list">
+
+              <p class="headline-sm footer-list-title">About Us</p>
+
+              <p class="text">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+              </p>
+
+            </div>
+
+
+          </div>
+
+          <div align="center">
+            <div id="map" align="center"></div>
+          </div> <br>
+        </div>
+      </footer>
+
+
+
+
+
+      <!-- ********************* Back To top ****************** -->
+      <a href="#top" class="back-top-btn" data-back-top-btn>
+        <img src="images/arrowUp.png" alt="Arrow Up" style="height: 20px;">
+      </a>
+
+      <script src="js/script.js"></script>
+      <script>
+
+        var map = L.map('map').setView([27.67043621347555, 85.30984850186114], 6000);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+          maxZoom: 19
+        }).addTo(map);
+
+
+        var marker = L.marker([27.67043621347555, 85.30984850186114]).addTo(map);
+      </script>
+</body>
+
+</html>
