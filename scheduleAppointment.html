@@ -114,6 +114,13 @@
                               color: #019BA9;
                               transform: scale(1.05);
                     }
+                    .forgotPassword{
+                              text-decoration: none;
+                              color: black;
+                    }
+                    .forgotPassword:hover {
+                              color: #019BA9;
+                    }
           </style>
 </head>
 
@@ -198,10 +205,10 @@
                               <br>
 
                               <button type="submit" class="btn"
-                                        style="background-color: hsl(182, 100%, 35%); color: white; border: none; padding: 10px 20px; margin-bottom: 10px; cursor: pointer; width: 100%;">Login</button>
+                                        style="background-color: hsl(182, 100%, 35%); color: white; border: none; padding: 10px 20px; margin-bottom: 10px; cursor: pointer; width: 100%; border-radius: 8px;">Login</button>
                               <button type="button" class="btn cancel" onclick="returningPatientClose();"
-                                        style="background-color: white; color: hsl(182, 100%, 35%); border: 2px solid hsl(182, 100%, 35%); padding: 10px 20px; cursor: pointer; width: 100%;">Close</button>
-
+                                        style="background-color: white; color: hsl(182, 100%, 35%); border: 2px solid hsl(182, 100%, 35%); padding: 10px 20px; cursor: pointer; width: 100%; border-radius: 8px;">Close</button>
+                              <br><a class="forgotPassword" href="php/forgotPassword.php">Forgot Password?</a>
                     </form>
           </div>
 
@@ -226,9 +233,9 @@
                                                   required>
 
                                         <button type="submit" class="btn"
-                                                  style="background-color: hsl(182, 100%, 35%); color: white; border: none; padding: 10px 20px; margin-bottom: 10px; cursor: pointer; width: 100%;">Create</button>
+                                                  style="background-color: hsl(182, 100%, 35%); color: white; border: none; padding: 10px 20px; margin-bottom: 10px; cursor: pointer; width: 100%; border-radius: 8px;">Create</button>
                                         <button type="button" class="btn cancel" onclick="newPatientClose();"
-                                                  style="background-color: white; color: hsl(182, 100%, 35%); border: 2px solid hsl(182, 100%, 35%); padding: 10px 20px; cursor: pointer; width: 100%;">Close</button>
+                                                  style="background-color: white; color: hsl(182, 100%, 35%); border: 2px solid hsl(182, 100%, 35%); padding: 10px 20px; cursor: pointer; width: 100%; border-radius: 8px;">Close</button>
 
                               </div>
                     </form>
