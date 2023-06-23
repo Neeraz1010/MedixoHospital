@@ -35,9 +35,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                             window.location.href = '../scheduleAppointment.html';
                                                   }
                                         }, 1000);
+                                        function hideForm() {
+                                          var formDiv = document.getElementById('newPatientCreateForm');
+                                          formDiv.style.display = 'none';
+                                        }
                               </script>";
           } else {
-                    echo "Invalid credentials.";
+                    echo "Invalid Credentialss";
           }
           $stmt->close();
 }
@@ -90,8 +94,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
           </div>
 </form>   
-<script>
-          // function hideForgotPassword(){
-          //           document.getElementById("submitButton").form.style;
-          // }
-</script>
