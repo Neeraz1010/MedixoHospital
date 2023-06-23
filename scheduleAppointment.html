@@ -114,10 +114,12 @@
                               color: #019BA9;
                               transform: scale(1.05);
                     }
-                    .forgotPassword{
+
+                    .forgotPassword {
                               text-decoration: none;
                               color: black;
                     }
+
                     .forgotPassword:hover {
                               color: #019BA9;
                     }
@@ -125,6 +127,9 @@
 </head>
 
 <body style="background-color: #f8f9fa;">
+          <button onclick="goBack();"
+                    style="padding: 8px 16px; position: absolute; margin-top: 10px; background-color: hsl(182, 100%, 35%); color: white; border: none; border-radius: 10px; cursor: pointer; margin-left: 2%;">Go
+                    Back</button>
           <div align="center" class="scheduleAppointmentMain"
                     style="margin: auto; margin-top: 1vw; border-radius: 20px; width: 65vw; height: 45vw; background-color: #fff; margin-bottom: 1vw;">
                     <div class="scheduleAppointment">
@@ -193,15 +198,15 @@
 
                               <label style="color: hsl(182, 100%, 35%); font-weight: bold;">User ID:</label>
                               <input type="text" name="userId" placeholder="Given By Hospital" required
-                                        style="border: 2px solid hsl(182, 100%, 35%); padding: 5px; margin-bottom: 10px; width: 100%;">
+                                        style="border: 2px solid hsl(182, 100%, 35%); padding: 5px; margin-bottom: 10px; width: 100%; text-align: center;">
 
                               <label style="color: hsl(182, 100%, 35%); font-weight: bold;">Full Name:</label>
                               <input type="text" name="fullName" placeholder="Full Name" required
-                                        style="border: 2px solid hsl(182, 100%, 35%); padding: 5px; margin-bottom: 10px; width: 100%;">
+                                        style="border: 2px solid hsl(182, 100%, 35%); padding: 5px; margin-bottom: 10px; width: 100%; text-align: center;">
 
                               <label style="color: hsl(182, 100%, 35%); font-weight: bold;">Phone Number:</label>
                               <input type="text" name="phoneNumber" placeholder="Phone Number" required
-                                        style="border: 2px solid hsl(182, 100%, 35%); padding: 5px; margin-bottom: 10px; width: 100%;"><br>
+                                        style="border: 2px solid hsl(182, 100%, 35%); padding: 5px; margin-bottom: 10px; width: 100%; text-align: center;"><br>
                               <br>
 
                               <button type="submit" class="btn"
@@ -222,14 +227,14 @@
                                                   style="color: hsl(182, 100%, 35%); font-weight: bold;">Full
                                                   Name:</label>
                                         <input type="text" name="fullName" id="fullName" placeholder="Full Name"
-                                                  style="border: 2px solid hsl(182, 100%, 35%); padding: 5px; margin-bottom: 10px; width: 100%;"
+                                                  style="border: 2px solid hsl(182, 100%, 35%); padding: 5px; margin-bottom: 10px; width: 100%; text-align: center;"
                                                   required>
 
                                         <label for="phoneNumber"
                                                   style="color: hsl(182, 100%, 35%); font-weight: bold;">Phone
                                                   Number:</label>
                                         <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Phone Number"
-                                                  style="border: 2px solid hsl(182, 100%, 35%); padding: 5px; margin-bottom: 10px; width: 100%;"
+                                                  style="border: 2px solid hsl(182, 100%, 35%); padding: 5px; margin-bottom: 10px; width: 100%; text-align: center;"
                                                   required>
 
                                         <button type="submit" class="btn"
@@ -240,6 +245,12 @@
                               </div>
                     </form>
           </div>
+          <script>
+                    function goBack() {
+                              window.location.href = "index.html";
+                    }
+
+          </script>
 
           <script>
                     document.getElementById('returningPatient').onclick = returningPatient;
