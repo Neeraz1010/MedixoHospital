@@ -45,19 +45,27 @@
     }
     .boxForUserCount {
       padding: 20px;
-      background-color: orange;
+      background-color: hsl(186, 100%, 19%);
       width: 15%;
       border-radius: 20px;
-      display: ;
+      color: white;
     }
+
     .boxForCount {
       padding: 20px;
-      background-color: orange;
+      color: white;
+      background-color: hsl(186, 100%, 19%);
       width: 15%;
       border-radius: 20px;
       margin: 10px;
       text-align: center;
+      transition: transform 0.3s ease; 
     }
+
+    .boxForCount:hover {
+      transform: scale(1.1);
+    }
+
     .navCountAdminPanel{
       display: flex;
       justify-content: center;
@@ -67,6 +75,8 @@
 <body>
   <h1 align="center">Admin Panel</h1>
   <hr>
+
+  <!-- Php code to count users in database -->
   <?php
   include 'connectToDatabase.php';
   $query = "SELECT COUNT(*) AS userCount FROM userLogin WHERE role = '1'";
@@ -79,6 +89,9 @@
     echo "Error retrieving data from the database: " . mysqli_error($connection);
   }
   ?>
+
+  <!-- Php code to count admins in database -->
+
   <?php
   include 'connectToDatabase.php';
   $query = "SELECT COUNT(*) AS adminCount FROM userLogin WHERE role = '2'";
@@ -92,23 +105,62 @@
     echo "Error retrieving data from the database: " . mysqli_error($connection);
   }
   ?>
+
+  <!-- Php code to count doctors in database -->
+
+  <?php
+  include "connectToDatabase.php";
+
+  $query = "SELECT COUNT(*) as count FROM doctor";
+  $result = $connection->query($query);
+
+  if ($result && $result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $doctorCount = $row["count"];
+  } else {
+    echo "No doctors found.";
+  }
+
+  $result->close();
+  $connection->close();
+  ?>
+
+<!-- Php code to count appointments in database -->
+
+<?php
+include "connectToDatabase.php";
+
+$query = "SELECT COUNT(*) as count FROM appointments";
+$result = $connection->query($query);
+
+if ($result && $result->num_rows > 0) {
+  $row = $result->fetch_assoc();
+  $appointmentCount = $row["count"];
+} else {
+  echo "No appointments found.";
+}
+
+$result->close();
+$connection->close();
+?>
+
   <div class="navCountAdminPanel">
     <div class="boxForCount">
       <h1>Users</h1>
       <h1><?php echo $userCount; ?></h1>
     </div>
-  <div class="boxForCount" style="background-color: #4CAF50;">
+  <div class="boxForCount">
     <h1>Admins</h1>
     <h1><?php echo $adminCount; ?></h1>
   </div>
-  <div class="boxForCount" style="background-color: hsl(182, 100%, 35%);">
-    <h1>Doctors</h1>
-    <h1><?php echo $adminCount; ?></h1>
-  </div>
-  <div class="boxForCount" style="background-color: #FFCDD2;">
+  <a href="doctorData.php" class="boxForCount" style="text-decoration: none; color: white;">
+      <h1>Doctors</h1>
+      <h1><?php echo $doctorCount; ?></h1>
+  </a>
+  <a href="doctorData.php" class="boxForCount"  style="text-decoration: none; color: white;">
     <h1>Appointments</h1>
-    <h1><?php echo $adminCount; ?></h1>
-  </div>
+    <h1><?php echo $appointmentCount; ?></h1>
+  </a>
 </div>
 
   <form method="post" action="addData.php" class="inputForm">
@@ -178,7 +230,7 @@
         echo "Error: " . mysqli_error($connection);
       } else {
         // Redirect back to the admin panel or a success page
-        header("Location: adminPanel.php");
+        // header("Location: adminPanel.php");
         exit();
       }
     }
