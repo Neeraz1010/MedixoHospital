@@ -13,6 +13,7 @@ $fullName = mysqli_real_escape_string($connection, $_POST['fullName']);
 $phoneNumber = mysqli_real_escape_string($connection, $_POST['phoneNumber']);
 
 
+
 // Insert data into the "userLogin" table
 $insertQuery = "INSERT INTO userLogin (userId, fullName, phoneNumber, role) VALUES ('$userId', '$fullName', '$phoneNumber', '1')";
 
