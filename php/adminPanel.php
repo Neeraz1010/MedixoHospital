@@ -26,8 +26,11 @@
       margin-bottom: 16px;
     }
     input[type=text] {
+      text-align: center;
       padding: 8px;
       width: 250px;
+      border-radius: 20px;
+      border-color: blue;
     }
     input[type=submit] {
       padding: 8px 16px;
@@ -69,6 +72,14 @@
     .navCountAdminPanel{
       display: flex;
       justify-content: center;
+    }
+
+    form button {
+      transition: transform ease 0.3s;
+    }
+
+    form button:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
@@ -145,42 +156,45 @@ $connection->close();
 ?>
 
   <div class="navCountAdminPanel">
-    <div class="boxForCount">
+    <a href="#tableUserAdmin" class="boxForCount" style="text-decoration: none; color: white;">
       <h1>Users</h1>
       <h1><?php echo $userCount; ?></h1>
-    </div>
-  <div class="boxForCount">
-    <h1>Admins</h1>
-    <h1><?php echo $adminCount; ?></h1>
+    </a>
+    <a href="#tableUserAdmin" class="boxForCount" style="text-decoration: none; color: white;">
+      <h1>Admins</h1>
+      <h1><?php echo $adminCount; ?></h1>
+    </a>
+    <a href="doctorData.php" class="boxForCount" style="text-decoration: none; color: white;">
+        <h1>Doctors</h1>
+        <h1><?php echo $doctorCount; ?></h1>
+    </a>
+    <a href="appointmentData.php" class="boxForCount"  style="text-decoration: none; color: white;">
+      <h1>Appointments</h1>
+      <h1><?php echo $appointmentCount; ?></h1>
+    </a>
   </div>
-  <a href="doctorData.php" class="boxForCount" style="text-decoration: none; color: white;">
-      <h1>Doctors</h1>
-      <h1><?php echo $doctorCount; ?></h1>
-  </a>
-  <a href="doctorData.php" class="boxForCount"  style="text-decoration: none; color: white;">
-    <h1>Appointments</h1>
-    <h1><?php echo $appointmentCount; ?></h1>
-  </a>
-</div>
 
   <form method="post" action="addData.php" class="inputForm">
 
     <h1>Add</h1>
     <div class="addForm">
-      User Id :
+      <label>User Id :</label>
       <input type="text" name="userId"  placeholder="User Id given by Hospital" required>
       
-      Full Name :
+      <label>Full Name :</label>
       <input type="text" name="fullName"  placeholder="Full Name" required>
       
-      Phone Number :
+      <label>Phone Number :</label>
       <input type="text" name="phoneNumber"  placeholder="Phone Number" required>
-      <button type="submit" style="width: 75px; height: 34px; ">Add</button>
+
+      <label>Role:</label>
+      <input type="text" placeholder="1 -> Admin | 2 -> User" name="role" required>
+      <button type="submit" style="width: 75px; height: 34px; border-radius: 20px">Add</button>
       
     </div>
   </form><br><br><br>
   <!-- Display Table -->
-  <table>
+  <table id="tableUserAdmin">
     <tr>
       <th>Id</th>
       <th>User Id</th>
