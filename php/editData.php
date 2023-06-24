@@ -29,6 +29,9 @@ mysqli_close($connection);
     input[type=text] {
       padding: 8px;
       width: 200px;
+      text-align: center;
+      border-radius: 20px;
+      border-color: blue;
     }
     input[type=submit],
     input[type=button] {
