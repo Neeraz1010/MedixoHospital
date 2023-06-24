@@ -68,6 +68,7 @@ $data = mysqli_fetch_all($result);
 
 echo "<table>
   <tr>
+      <th>S.N</th>
       <th>Doctor ID</th>
       <th>Full Name</th>
       <th>Phone Number</th>
@@ -75,9 +76,11 @@ echo "<table>
       <th>Actions</th>
   </tr>";
 if ($result->num_rows > 0) {
+  $snumber = 1;
   foreach ($data as $individual_data) {
     echo "
                       <tr>
+                                <td>$snumber</td>
                                 <td>{$individual_data[0]}</td>
                                 <td>{$individual_data[1]}</td>
                                 <td>{$individual_data[2]}</td>
@@ -85,11 +88,12 @@ if ($result->num_rows > 0) {
                 <td><a href='deleteDoctorData.php?doctorId=$individual_data[0]&fullName=$individual_data[1]&phoneNumber=$individual_data[2]&speciality=$individual_data[3]'>| Delete |
                   <a href='editDoctorData.php?doctorId=$individual_data[0]&fullName=$individual_data[1]&phoneNumber=$individual_data[2]&speciality=$individual_data[3]'>Edit |</a></td>
               </tr>";
+    $snumber++;
   }
 
   echo "</table>";
 } else {
-  echo "<tr><td colspan='5'>
+  echo "<tr><td colspan='6'>
           No doctors found.
           </td></tr>";
 }
