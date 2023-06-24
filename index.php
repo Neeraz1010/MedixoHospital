@@ -97,8 +97,7 @@
               </p>
 
               <div class="wrapper">
-                Use Js to print daily Motivational quotes in this division
-
+              <span id="quote"></span>
               </div>
 
             </div>
@@ -132,8 +131,9 @@
                   <a href="#">ENT</a>
                 </h3>
 
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing
+                <p class="card-text" style="text-align: justify;">
+                  ENT, short for Ear, Nose, and Throat, is a specialized medical field that focuses on 
+                  diagnosing and treating disorders and conditions related to the ears, nose, throat, and related structures.
                 </p>
 
                 <a href="#" class="btn-circle"><img src="images/arrowRight.png" alt="Arrow Pointing Right"
@@ -153,8 +153,9 @@
                   <a href="#">Neurology</a>
                 </h3>
 
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing
+                <p class="card-text" style="text-align: justify;">
+                 Neurology is a medical specialty that focuses on the diagnosis and treatment of disorders related to the nervous system. This includes the brain, spinal cord, and peripheral nerves. 
+                 <br><br>
                 </p>
 
                 <a href="#" class="btn-circle"><img src="images/arrowRight.png" alt="Arrow Pointing Right"
@@ -174,8 +175,9 @@
                   <a href="#">Pulmonology</a>
                 </h3>
 
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing
+                <p class="card-text" style="text-align: justify;">
+                  Pulmonology is a specialized field in medicine that focuses on the diagnosis, treatment, and management of diseases related to the respiratory system. 
+                  <br><br><br>
                 </p>
 
                 <a href="#" class="btn-circle"><img src="images/arrowRight.png" alt="Arrow Pointing Right"
@@ -195,9 +197,9 @@
                   <a href="#">Orthopedics</a>
                 </h3>
 
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing
-                </p>
+                <p class="card-text" style="text-align: justify;">
+                 Orthopedics is a medical specialty that focuses on the diagnosis, treatment, and prevention of conditions and injuries related to the musculoskeletal system. 
+                </p><br><br>
 
                 <a href="#" class="btn-circle"><img src="images/arrowRight.png" alt="Arrow Pointing Right"
                     style="height: 20px;"></a>
@@ -465,6 +467,30 @@
           tabButtons[activeTabIndex].classList.add('active');
         }
         setInterval(switchTab, 2000);
+        
+        /*-----------Motivational Quotes in hero section----------------*/
+        const quotes = [
+          "The art of medicine consists of amusing the patient while nature cures the disease. - Voltaire",
+          "The best doctor gives the least medicines. - Benjamin Franklin",
+          "Medicine is a science of uncertainty and an art of probability. - William Osler",
+          "Wherever the art of medicine is loved, there is also a love of humanity. - Hippocrates",
+          "Medicine is not only a science; it is also an art. - Paracelsus",
+          "In nothing do men more nearly approach the gods than in giving health to men. - Cicero"
+        ];
+
+        const wrapper = document.querySelector('.wrapper');
+        const quoteElement = document.getElementById('quote');
+        let currentQuoteIndex = 0;
+
+        function rotateQuotes() {
+          quoteElement.textContent = quotes[currentQuoteIndex];
+          currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+        }
+
+        setInterval(rotateQuotes, 5000); // Change the time interval (in milliseconds) as needed
+
+        // Initial quote rotation
+        rotateQuotes();
       </script>
 
 </body>
