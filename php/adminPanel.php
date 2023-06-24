@@ -1,7 +1,3 @@
-
-<!DOCTYPE html>
-<html>
-<head>
   <title>Admin Panel</title>
   <link rel="shortcut icon" href="../favicon.svg" type="image/svg+xml">
   <style>
@@ -82,8 +78,7 @@
       transform: scale(1.1);
     }
   </style>
-</head>
-<body>
+
   <h1 align="center">Admin Panel</h1>
   <hr>
 
@@ -193,6 +188,7 @@ $connection->close();
       
     </div>
   </form><br><br><br>
+
   <!-- Display Table -->
   <table id="tableUserAdmin">
     <tr>
@@ -250,13 +246,15 @@ $connection->close();
     }
     $connection->close();
     ?>
-  </table><br>
-  <button onclick="goBack();" style="padding: 8px 16px; background-color: #4CAF50; color: white; border: none; border-radius: 10px; cursor: pointer; margin-left: 2%;">Go Back</button>
-  <script>
-          function goBack() {
-              window.location.href = "../scheduleAppointment.html";
-          }
 
-    </script>
-</body>
-</html>
+<?php
+echo "
+ </table><br>
+ <button onclick=\"goBack();\" style=\"padding: 8px 16px; background-color: #4CAF50; color: white; border: none; border-radius: 10px; cursor: pointer; margin-left: 2%;\">Go Back</button>
+ <script>
+   function goBack() {
+       window.location.href = \"../scheduleAppointment.html\";
+   }
+ </script>";
+?>
+
