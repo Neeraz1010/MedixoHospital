@@ -55,7 +55,7 @@ mysqli_close($connection);
     }
   </style>
 <h2>Update Doctor</h2>
-    <form method="POST" action="adminPanel.php">
+    <form method="POST" action="doctorData.php">
          <label>Doctor ID:</label>
         <input type="text"  placeholder="ID" value="<?php echo $doctorId; ?>" name="id" required readonly>
 
