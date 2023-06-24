@@ -27,6 +27,46 @@ INSERT INTO userLogin (userId, fullName, phoneNumber, role) VALUES
 ('210634', 'Niraj Giri', '9847950672', 2),
 ('210633', 'Anjan Phuyal', '9841361927', 2);
 
+-- Create the `doctor` table
+CREATE TABLE doctor (
+  doctorId INT PRIMARY KEY AUTO_INCREMENT,
+  fullName VARCHAR(255) NOT NULL,
+  phoneNumber VARCHAR(20) NOT NULL,
+  speciality VARCHAR(255) NOT NULL
+);
+
+-- Create the `appointments` table
+CREATE TABLE appointments (
+  appointmentId INT PRIMARY KEY AUTO_INCREMENT,
+  date DATE NOT NULL,
+  time TIME NOT NULL,
+  doctorId INT,
+  fullName VARCHAR(255),
+  FOREIGN KEY (doctorId) REFERENCES doctor(doctorId)
+);
+
+INSERT INTO doctor (doctorId, fullName, phoneNumber, speciality)
+VALUES (210630, 'Anjan Baniya', '9823455484', 'Psychiatry');
+
+INSERT INTO appointments (appointmentId, date, time, doctorId, fullName)
+VALUES (1, '2023-06-30', '14:00:00', 210623, 'Biplav Rai');
+
+
+INSERT INTO doctor (doctorId, fullName, phoneNumber, speciality)
+VALUES (210623, 'Prakash Ghimire', '9821314151', 'Gynecology'),
+(210633, 'Anjan Phuyal', '9821314151', 'Pulmonology'),
+(210621, 'Suman Sigdel', '9821314151', 'Orthopedics'),
+(210622, 'Sanjog Gurung', '9821314151', 'Pediatrics'),
+(210624, 'Sijan Rai', '9821314151', 'Osteology');
+
+INSERT INTO doctor (doctorId, fullName, phoneNumber, speciality)
+VALUES (210635, 'Puran Dahal', '9847950672', 'Guffadi');
 
 SELECT * FROM userLogin;
+SELECT * FROM doctor;
+SELECT * FROM appointments;
+
+
+DROP TABLE userLogin;
+
 
