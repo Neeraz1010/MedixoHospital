@@ -23,7 +23,7 @@ if ($result) {
 
                                         // Redirect the user based on the role
                                         if ($roleName == 'user') {
-                                                  header("Location: ../index.html");
+                                                  header("Location: ../index.php");
                                                   exit;
                                         } elseif ($roleName == 'admin') {
                                                   header("Location: ../php/adminPanel.php");

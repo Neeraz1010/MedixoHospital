@@ -5,12 +5,12 @@ $doctorId = $_GET['doctorId'];
 $query = "SELECT doctorId, fullName, phoneNumber, speciality FROM doctor WHERE doctorId = '$doctorId'";
 $result = mysqli_query($connection, $query);
 
-if ($result && mysqli_num_rows($result) > 0) {
-          $row = mysqli_fetch_assoc($result);
-          $doctorId = $row['doctorId'];
-          $fullName = $row['fullName'];
-          $phoneNumber = $row['phoneNumber'];
-          $speciality = $row['speciality'];
+if ($result) {
+  $row = mysqli_fetch_assoc($result);
+  $doctorId = $row['doctorId'];
+  $fullName = $row['fullName'];
+  $phoneNumber = $row['phoneNumber'];
+  $speciality = $row['speciality'];
 }
 
 mysqli_close($connection);
@@ -55,23 +55,23 @@ mysqli_close($connection);
     }
   </style>
 <h2>Update Doctor</h2>
-    <form method="POST" action="doctorData.php">
-         <label>Doctor ID:</label>
-        <input type="text"  placeholder="ID" value="<?php echo $doctorId; ?>" name="id" required readonly>
+<form method="POST" action="updateDoctor.php">
+    <label>Doctor ID:</label>
+    <input type="text" placeholder="ID" value="<?php echo $doctorId; ?>" name="doctorId" required readonly>
 
-        <label>Full Name:</label>
-        <input type="text" placeholder="Full Name" value="<?php echo $fullName; ?>" name="fullName" required>
+    <label>Full Name:</label>
+    <input type="text" placeholder="Full Name" value="<?php echo $fullName; ?>" name="fullName" required>
 
-        <label>Phone Number:</label>
-        <input type="text" placeholder="Phone Number" value="<?php echo $phoneNumber; ?>" name="phoneNumber" required>
-        
-        <label>Speciality:</label>
-        <input type="text" placeholder="1 -> Admin | 2 -> User" value="<?php echo $speciality; ?>" name="role" required readonly>
-        <br> <br>
-        
-        <input type="button" value="Go Back" onclick="goBack();" style="float: left; margin-left: 2%; border-radius: 10px;">
-        <input type="submit" value="Update" style="float: right; margin-right: 2%; border-radius: 10px;">
-    </form>
+    <label>Phone Number:</label>
+    <input type="text" placeholder="Phone Number" value="<?php echo $phoneNumber; ?>" name="phoneNumber" required>
+
+    <label>Speciality:</label>
+    <input type="text" placeholder="Speciality" value="<?php echo $speciality; ?>" name="speciality" required readonly>
+    <br> <br>
+
+    <input type="button" value="Go Back" onclick="goBack();" style="float: left; margin-left: 2%; border-radius: 10px;">
+    <input type="submit" value="Update" style="float: right; margin-right: 2%; border-radius: 10px;">
+</form>
     <script>
           function goBack() {
               window.history.back();

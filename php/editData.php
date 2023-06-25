@@ -53,7 +53,7 @@ mysqli_close($connection);
     }
   </style>
 <h2>Update User</h2>
-    <form method="POST" action="adminPanel.php">
+    <form method="POST" action="updateUser.php">
          <label>ID:</label>
         <input type="text"  placeholder="ID" value="<?php echo $id; ?>" name="id" required readonly>
     
