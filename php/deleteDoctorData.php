@@ -13,7 +13,7 @@ if (isset($_GET['doctorId'])) {
 
           // Check if the deletion was successful
           if ($stmt->affected_rows > 0) {
-                    header("Location: adminPanel.php");
+                    header("Location: doctorData.php");
                     exit();
 
           } else {
