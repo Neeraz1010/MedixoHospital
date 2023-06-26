@@ -33,7 +33,7 @@ echo "<tr>
           <th>Date</th>
           <th>Time</th>
           <th>Doctor Id</th>
-          <th>Full Name</th>
+          <th>Patient Name</th>
           <th>Actions</th>
           </tr>";
 
@@ -53,7 +53,7 @@ if ($result->num_rows > 0) {
 
   echo "</table>";
 } else {
-  echo "<tr><td colspan='5'>
+  echo "<tr><td colspan='6'>
           No appointments available.
           </td></tr>";
 }

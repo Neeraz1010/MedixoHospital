@@ -23,8 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     // Format the date
                     $formattedDate = date('Y-m-d', strtotime($date));
 
+                    // Convert time format from '12:30 PM' to '12:30:00'
+                    $formattedTime = date('H:i:s', strtotime($time));
+
                     // Insert the data into the appointments table
-                    $insertQuery = "INSERT INTO appointments (date, time, doctorId, fullName) VALUES ('$formattedDate', '$time', '$doctorId', '$fullName')";
+                    $insertQuery = "INSERT INTO appointments (date, time, doctorId, fullName) VALUES ('$formattedDate', '$formattedTime', '$doctorId', '$fullName')";
 
                     if (!mysqli_query($connection, $insertQuery)) {
                               $error = 'Error: ' . mysqli_error($connection);
@@ -33,6 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                               exit();
                     }
           }
+
+
 
 }
 
