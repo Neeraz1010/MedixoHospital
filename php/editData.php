@@ -1,3 +1,5 @@
+<link rel="shortcut icon" href="../favicon.svg" type="image/svg+xml">
+
 <?php
 include 'connectToDatabase.php';
 $id = $_GET['id'];

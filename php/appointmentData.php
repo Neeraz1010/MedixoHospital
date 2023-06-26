@@ -1,3 +1,5 @@
+<link rel="shortcut icon" href="../favicon.svg" type="image/svg+xml">
+
 <style>
     table {
       width: 100%;

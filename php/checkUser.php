@@ -1,3 +1,5 @@
+<link rel="shortcut icon" href="../favicon.svg" type="image/svg+xml">
+
 <?php
 include 'connectToDatabase.php';
 
@@ -23,7 +25,7 @@ if ($result) {
 
                                         // Redirect the user based on the role
                                         if ($roleName == 'user') {
-                                                  header("Location: ../index.php");
+                                                  header("Location: ../appointment.php");
                                                   exit;
                                         } elseif ($roleName == 'admin') {
                                                   header("Location: ../php/adminPanel.php");
