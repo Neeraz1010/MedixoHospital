@@ -45,10 +45,6 @@ button {
   cursor: pointer;
 }
 
-ion-icon {
-  pointer-events: none;
-}
-
 html {
   font-size: 10px;
   font-family: 'rubik';
