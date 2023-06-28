@@ -1,6 +1,6 @@
 <?php
 include 'connectToDatabase.php';
-require_once 'autoload.php';
+require_once '../Twilio/autoload.php';
 
 use Twilio\Rest\Client;
 
@@ -8,7 +8,7 @@ use Twilio\Rest\Client;
 function sendSMS($to, $message)
 {
           $accountSid = 'ACa8784d71448ba199a111e11d23e65834';
-          $authToken = 'c89de0c695be4c8d6ab332dabe488f5b';
+          $authToken = 'bf56b03d0688dd9d7a173aa3bc896203';
           $twilioNumber = '+14849898591';
 
           // Create a Twilio client
@@ -36,8 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           $editQuery = "UPDATE userLogin SET userId='$userId', fullName='$fullName', phoneNumber='$phoneNumber', role='$role' WHERE id='$id'";
 
           // Send SMS notification
-          $message = "Your UserID has been updated to: " . $userId;
-          sendSMS($phoneNumber, $message);
+          $message = "Your UserID of Medixo Hospital is: " . $userId . ". Use it to Login with registered Phone Number.";
+          sendSMS('+9779847950672', $message);
 
           if (!mysqli_query($connection, $editQuery)) {
                     echo "Error: " . mysqli_error($connection);
