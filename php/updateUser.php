@@ -7,9 +7,7 @@ use Twilio\Rest\Client;
 // Function to send SMS using Twilio API
 function sendSMS($to, $message)
 {
-          $accountSid = 'ACa8784d71448ba199a111e11d23e65834';
-          $authToken = 'bf56b03d0688dd9d7a173aa3bc896203';
-          $twilioNumber = '+14849898591';
+          require_once 'config.php';
 
           // Create a Twilio client
           $client = new Client($accountSid, $authToken);
@@ -23,6 +21,7 @@ function sendSMS($to, $message)
                     ]
           );
 }
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
