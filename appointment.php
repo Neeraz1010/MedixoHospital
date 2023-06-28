@@ -100,7 +100,7 @@
         while ($startTime <= $endTime) {
           $formattedTime = date("h:i A", $startTime);
           echo "<option value='$formattedTime'>$formattedTime</option>";
-          $startTime += 60 * 30;
+          $startTime += 60 * 60;
         }
         ?>
       </select>
