@@ -429,7 +429,7 @@
           </div>
 
           <div align="center">
-            <div id="map" align="center" style="border-radius: 20px;"></div>
+            <div id="map" align="center" style="border-radius: 20px;" alt="Google Map"></div>
           </div> <br>
         </div>
       </footer>
