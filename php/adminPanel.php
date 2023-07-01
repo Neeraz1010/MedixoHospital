@@ -24,7 +24,7 @@
     input[type=text] {
       text-align: center;
       padding: 8px;
-      width: 250px;
+      width: 235px;
       border-radius: 20px;
       border-color: blue;
     }
@@ -183,7 +183,7 @@ $connection->close();
       <input type="text" name="phoneNumber"  placeholder="Phone Number" required>
 
       <label>Role:</label>
-      <input type="text" placeholder="1 -> Admin | 2 -> User" name="role" required>
+      <input type="text" placeholder="1 -> User | 2 -> Admin" name="role" required>
       <button type="submit" style="width: 75px; height: 34px; border-radius: 20px">Add</button>
       
     </div>
