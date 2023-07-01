@@ -48,10 +48,6 @@ CREATE TABLE appointments (
 INSERT INTO doctor (doctorId, fullName, phoneNumber, speciality)
 VALUES (210630, 'Anjan Baniya', '9823455484', 'Psychiatry');
 
-INSERT INTO appointments (appointmentId, date, time, doctorId, fullName)
-VALUES (1, '2023-06-30', '14:00:00', 210623, 'Biplav Rai');
-
-
 INSERT INTO doctor (doctorId, fullName, phoneNumber, speciality)
 VALUES (210623, 'Prakash Ghimire', '9821314151', 'Gynecology'),
 (210633, 'Anjan Phuyal', '9821314151', 'Pulmonology'),
