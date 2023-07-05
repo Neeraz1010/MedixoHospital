@@ -57,7 +57,7 @@
       transtion: transform ease 0.3s;
      }
      .container {
-          top: 100px;
+          margin-left: 500px;
           padding: 1px;
           background-color: rgba(102, 175, 233, 0.5);
           width: 25%;
