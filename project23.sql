@@ -63,6 +63,6 @@ SELECT * FROM doctor;
 SELECT * FROM appointments;
 
 
-DROP TABLE userLogin;
+DROP TABLE appointments;
 
 
