@@ -1,3 +1,10 @@
+<button onclick="goBack();" style="padding: 8px 16px; background-color: #4CAF50; color: white; border: none; border-radius: 10px; cursor: pointer; margin-left: 2%;">Go Back</button>
+    <script>
+          function goBack() {
+              window.location.href = "adminPanel.php";
+          }
+
+    </script>
 <link rel="shortcut icon" href="../favicon.svg" type="image/svg+xml">
 
 <style>
@@ -57,6 +64,7 @@ if ($result->num_rows > 0) {
           No appointments available.
           </td></tr>";
 }
+
 
 mysqli_close($connection);
 ?>

@@ -111,7 +111,7 @@
             <?php
             // Connect to the database and retrieve the doctor data
             include 'php/connectToDatabase.php';
-            $query = "SELECT doctorId, fullName, speciality FROM doctor";
+            $query = "SELECT doctorId, fullName, speciality, flag FROM doctor";
             $result = mysqli_query($connection, $query);
 
             // Loop through the query result and generate the options
@@ -119,13 +119,19 @@
               $doctorId = $row['doctorId'];
               $doctorName = $row['fullName'];
               $speciality = $row['speciality'];
-              echo "<option value='$doctorId'>$doctorName ($speciality)</option>";
+              $flag = $row['flag'];
+            
+              // Display the option with flag status
+              if ($flag == 1) {
+                echo "<option value='$doctorId'>$doctorName ($speciality)</option>";
+              } else {
+                echo "<option value='$doctorId' disabled>$doctorName ($speciality)</option>";
+              }
             }
             // Close the database connection
             mysqli_close($connection);
             ?>
           </select>
-
 
     <label for="fullName">Patient Name:</label>
     <input type="text" name="fullName" placeholder="Patient Full Name" required autocomplete="off"><br><br>

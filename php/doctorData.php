@@ -34,7 +34,7 @@
     input[type=text] {
       text-align: center;
       padding: 8px;
-      width: 230px;
+      width: 170px;
       border-color: blue;
       border-radius: 20px;
     }
@@ -54,6 +54,8 @@
     }
     form button {
       transition: transform ease 0.3s;
+      position: absolute;
+      margin-left: 10px;
     }
 
     form button:hover {
@@ -75,6 +77,7 @@ echo "<table>
       <th>Full Name</th>
       <th>Phone Number</th>
       <th>Speciality</th>
+      <th>Flag</th>
       <th>Actions</th>
   </tr>";
 if ($result->num_rows > 0) {
@@ -87,8 +90,9 @@ if ($result->num_rows > 0) {
                                 <td>{$individual_data[1]}</td>
                                 <td>{$individual_data[2]}</td>
                                 <td>{$individual_data[3]}</td>
-                <td><a href='deleteDoctorData.php?doctorId=$individual_data[0]&fullName=$individual_data[1]&phoneNumber=$individual_data[2]&speciality=$individual_data[3]'>| Delete |
-                  <a href='editDoctorData.php?doctorId=$individual_data[0]&fullName=$individual_data[1]&phoneNumber=$individual_data[2]&speciality=$individual_data[3]'>Edit |</a></td>
+                                <td>{$individual_data[4]}</td>
+                <td><a href='deleteDoctorData.php?doctorId=$individual_data[0]&fullName=$individual_data[1]&phoneNumber=$individual_data[2]&speciality=$individual_data[3]&flag=$individual_data[4]'>| Delete |
+                  <a href='editDoctorData.php?doctorId=$individual_data[0]&fullName=$individual_data[1]&phoneNumber=$individual_data[2]&speciality=$individual_data[3]&flag=$individual_data[4]'>Edit |</a></td>
               </tr>";
     $snumber++;
   }
@@ -116,16 +120,19 @@ $connection->close();
     <h1 align="center">Add New Doctor</h1>
 <form method="POST" action="addDoctorData.php" class="addForm">
     <label for="doctorId">Doctor ID:</label>
-    <input type="text" name="doctorId" id="doctorId" required autocomplete="off">
+    <input type="text" placeholder="Doctor Id"  name="doctorId" id="doctorId" required autocomplete="off">
 
     <label for="fullName">Full Name:</label>
-    <input type="text" name="fullName" id="fullName" required autocomplete="off">
+    <input type="text" placeholder="Full Name"  name="fullName" id="fullName" required autocomplete="off">
 
     <label for="phoneNumber">Phone Number:</label>
-    <input type="text" name="phoneNumber" id="phoneNumber" required autocomplete="off">
+    <input type="text" placeholder="Phone Number"  name="phoneNumber" id="phoneNumber" required autocomplete="off">
 
     <label for="speciality">Speciality:</label>
-    <input type="text" name="speciality" id="speciality" required autocomplete="off">
+    <input type="text" placeholder="Speciality" name="speciality" id="speciality" required autocomplete="off">
+
+    <label>Flag:</label>
+    <input type="text" placeholder="1->True | 0-> False" name="flag" required >
 
     <button type="submit" style="width: 75px; height: 34px; border-radius: 20px">Add</button>
 </form>

@@ -4,7 +4,7 @@
 include 'connectToDatabase.php';
 
 $doctorId = $_GET['doctorId'];
-$query = "SELECT doctorId, fullName, phoneNumber, speciality FROM doctor WHERE doctorId = '$doctorId'";
+$query = "SELECT doctorId, fullName, phoneNumber, speciality, flag FROM doctor WHERE doctorId = '$doctorId'";
 $result = mysqli_query($connection, $query);
 
 if ($result) {
@@ -13,7 +13,9 @@ if ($result) {
   $fullName = $row['fullName'];
   $phoneNumber = $row['phoneNumber'];
   $speciality = $row['speciality'];
+  $flag = $row['flag'];
 }
+
 
 mysqli_close($connection);
 ?>
@@ -33,7 +35,7 @@ mysqli_close($connection);
     }
     input[type=text] {
       padding: 8px;
-      width: 200px;
+      width: 180px;
       border-radius: 20px;
       border-color: blue;
     }
@@ -69,6 +71,9 @@ mysqli_close($connection);
 
     <label>Speciality:</label>
     <input type="text" placeholder="Speciality" value="<?php echo $speciality; ?>" name="speciality" required readonly>
+
+    <label>Flag:</label>
+    <input type="text" placeholder="1->True | 0-> False" value="<?php echo $flag; ?>" name="flag" required >
     <br> <br>
 
     <input type="button" value="Go Back" onclick="goBack();" style="float: left; margin-left: 2%; border-radius: 10px;">

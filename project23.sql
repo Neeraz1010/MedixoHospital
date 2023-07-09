@@ -32,7 +32,8 @@ CREATE TABLE doctor (
   doctorId INT PRIMARY KEY AUTO_INCREMENT,
   fullName VARCHAR(255) NOT NULL,
   phoneNumber VARCHAR(20) NOT NULL,
-  speciality VARCHAR(255) NOT NULL
+  speciality VARCHAR(255) NOT NULL,
+  flag INT NOT NULL
 );
 
 -- Create the `appointments` table
@@ -45,24 +46,22 @@ CREATE TABLE appointments (
   FOREIGN KEY (doctorId) REFERENCES doctor(doctorId)
 );
 
-INSERT INTO doctor (doctorId, fullName, phoneNumber, speciality)
-VALUES (210630, 'Anjan Baniya', '9823455484', 'Psychiatry');
+INSERT INTO doctor (doctorId, fullName, phoneNumber, speciality, flag)
+VALUES (210630, 'Anjan Baniya', '9823455484', 'Psychiatry', '1');
 
-INSERT INTO doctor (doctorId, fullName, phoneNumber, speciality)
-VALUES (210623, 'Prakash Ghimire', '9821314151', 'Gynecology'),
-(210633, 'Anjan Phuyal', '9821314151', 'Pulmonology'),
-(210621, 'Suman Sigdel', '9821314151', 'Orthopedics'),
-(210622, 'Sanjog Gurung', '9821314151', 'Pediatrics'),
-(210624, 'Sijan Rai', '9821314151', 'Osteology');
-
-INSERT INTO doctor (doctorId, fullName, phoneNumber, speciality)
-VALUES (210635, 'Puran Dahal', '9847950672', 'Guffadi');
+INSERT INTO doctor (doctorId, fullName, phoneNumber, speciality, flag)
+VALUES (210623, 'Prakash Ghimire', '9821314151', 'Gynecology', '1'),
+(210633, 'Anjan Phuyal', '9821314151', 'Pulmonology', '1'),
+(210621, 'Suman Sigdel', '9821314151', 'Orthopedics', '1'),
+(210622, 'Sanjog Gurung', '9821314151', 'Pediatrics', '1'),
+(210624, 'Sijan Rai', '9821314151', 'Osteology', '1');
 
 SELECT * FROM userLogin;
 SELECT * FROM doctor;
 SELECT * FROM appointments;
 
 
-DROP TABLE appointments;
+DROP TABLE doctor;
+
 
 
