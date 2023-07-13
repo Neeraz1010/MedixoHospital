@@ -1,23 +1,40 @@
-  <title>Admin Panel</title>
+<title>Admin Panel</title>
   <link rel="shortcut icon" href="../favicon.svg" type="image/svg+xml">
   <style>
     table {
       width: 100%;
-      border-collapse: collapse;
+      margin-top: 66px;
+    border: 1px solid hsl(186, 100%, 19%);
+    border-radius: 22px;
     }
     a {
-      text-decoration: none;
-      color: #019BA9;
-      transition: color 0.2s ease;
+      border: 1px solid transparent;
+    background-color: hsl(186, 100%, 19%);
+    color: white;
+    border-radius: 5px;
+    padding: 2px 4px;
+    text-decoration: none;
+    transition: color 0.2s ease;
     }
-    a:hover {
-      color: blue;
+    
+    tr th
+    {
+      background-color: hsl(186, 100%, 19%);
+      color: white;
     }
+    
     th, td {
       padding: 8px;
       text-align: center;
       border-bottom: 1px solid #ddd;
     }
+    .inputform
+    {
+    margin-top: 51px;
+    padding: 1px 6px;
+    padding-bottom: 45px;
+}
+    
     form {
       margin-bottom: 16px;
     }
@@ -26,7 +43,7 @@
       padding: 8px;
       width: 235px;
       border-radius: 20px;
-      border-color: blue;
+      border: 1px solid hsl(186, 100%, 19%);
     }
     input[type=submit] {
       padding: 8px 16px;
@@ -68,6 +85,7 @@
     .navCountAdminPanel{
       display: flex;
       justify-content: center;
+      margin-top: 70px;
     }
 
     form button {
@@ -77,9 +95,35 @@
     form button:hover {
       transform: scale(1.1);
     }
+
+    .edit
+    {
+      margin-left: 10px;
+    padding: 2px 8px;
+    }
+    .edit:hover
+    {
+      color: hsl(186, 100%, 19%);
+      background-color: white;
+    }
+    .delete:hover
+    {
+      background-color: white;
+      color: hsl(186, 100%, 19%);
+    }
+    .add 
+    {
+      color: white;
+      background-color: hsl(186, 100%, 19%);
+    }
+    .add:hover
+    {
+      color: hsl(186, 100%, 19%);
+      background-color: white;
+    }
   </style>
 
-  <h1 align="center">Admin Panel</h1>
+  <h1 align="center" style="padding: 8px; color: hsl(186, 100%, 19%)">Admin Panel</h1>
   <hr>
 
   <!-- Php code to count users in database -->
@@ -169,35 +213,16 @@ $connection->close();
     </a>
   </div>
 
-  <form method="post" action="addData.php" class="inputForm">
-
-    <h1>Add</h1>
-    <div class="addForm">
-      <label>User Id :</label>
-      <input type="text" name="userId"  placeholder="User Id given by Hospital" required>
-      
-      <label>Full Name :</label>
-      <input type="text" name="fullName"  placeholder="Full Name" required>
-      
-      <label>Phone Number :</label>
-      <input type="text" name="phoneNumber"  placeholder="Phone Number" required>
-
-      <label>Role:</label>
-      <input type="text" placeholder="1 -> User | 2 -> Admin" name="role" required>
-      <button type="submit" style="width: 75px; height: 34px; border-radius: 20px">Add</button>
-      
-    </div>
-  </form><br><br><br>
-
+  
   <!-- Display Table -->
   <table id="tableUserAdmin">
     <tr>
-      <th>Id</th>
+      <th style="border-radius: 22px 0px 0px 0px;">Id</th>
       <th>User Id</th>
       <th>Full Name</th>
       <th>Phone Number</th>
       <th>Role[ 1 --> User | 2 --> Admin ]</th>
-      <th>Actions</th>
+      <th style="border-radius: 0px 22px 0px 0px;">Actions</th>
     </tr>
     <?php
     include 'connectToDatabase.php';
@@ -215,8 +240,8 @@ $connection->close();
                   <td>{$individual_data[2]}</td>
                   <td>{$individual_data[3]}</td>
                   <td>{$individual_data[4]}</td>
-                  <td><a href='deleteData.php?id=$individual_data[0]&userId=$individual_data[1]&fullName=$individual_data[2]&phoneNumber=$individual_data[3]&role=$individual_data[4]'>| Delete |
-                  <a href='editData.php?id=$individual_data[0]&userId=$individual_data[1]&fullName=$individual_data[2]&phoneNumber=$individual_data[3]&role=$individual_data[4]'>Edit |</a></td>
+                  <td><a class='delete' href='deleteData.php?id=$individual_data[0]&userId=$individual_data[1]&fullName=$individual_data[2]&phoneNumber=$individual_data[3]&role=$individual_data[4]'> Delete 
+                  <a class='edit' href='editData.php?id=$individual_data[0]&userId=$individual_data[1]&fullName=$individual_data[2]&phoneNumber=$individual_data[3]&role=$individual_data[4]'> Edit </a></td>
                   </tr>
                   ";
       }
@@ -228,11 +253,33 @@ $connection->close();
 <?php
 echo "
  </table><br>
- <button onclick=\"goBack();\" style=\"padding: 8px 16px; background-color: #4CAF50; color: white; border: none; border-radius: 10px; cursor: pointer; margin-left: 2%;\">Go Back</button>
+ <button onclick=\"goBack();\" style=\"padding: 8px 16px;margin-top: 40px; background-color: hsl(186, 100%, 19%); color: white; border: none; border-radius: 10px; cursor: pointer; margin-left: 2%;\">Go Back</button>
  <script>
    function goBack() {
        window.location.href = \"../scheduleAppointment.html\";
    }
  </script>";
 ?>
+<br><br><br>
+<hr>
+<form method="post" action="addData.php" class="inputForm">
+
+    <h1>Add</h1>
+    <div class="addForm">
+      <label>User Id :</label>
+      <input type="text" name="userId"  placeholder="User Id given by Hospital" required>
+      
+      <label>Full Name :</label>
+      <input type="text" name="fullName"  placeholder="Full Name" required>
+      
+      <label>Phone Number :</label>
+      <input type="text" name="phoneNumber"  placeholder="Phone Number" required>
+
+      <label>Role:</label>
+      <input type="text" placeholder="1 -> User | 2 -> Admin" name="role" required>
+      <button class="add" type="submit" style="width: 75px; height: 34px;border: 1px solid transparent; border-radius: 20px">Add</button>
+      
+    </div>
+  </form><br><br><br>
+
 

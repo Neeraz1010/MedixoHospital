@@ -3,12 +3,13 @@
 <?php
 include 'connectToDatabase.php';
 $id = $_GET['id'];
-$query = "SELECT id, fullName, phoneNumber, role FROM userLogin WHERE id = '$id'";
+$query = "SELECT id, userId, fullName, phoneNumber, role FROM userLogin WHERE id = '$id'";
 $result = mysqli_query($connection, $query);
 
 if ($result) {
   $row = mysqli_fetch_assoc($result);
   $id = $row['id'];
+  $userId = $row['userId'];
   $fullName = $row['fullName'];
   $phoneNumber = $row['phoneNumber'];
   $role = $row['role'];
@@ -60,7 +61,7 @@ mysqli_close($connection);
         <input type="text"  placeholder="ID" value="<?php echo $id; ?>" name="id" required readonly>
     
         <label>User ID:</label>
-        <input type="text" placeholder="User ID" name="userId" required>
+        <input type="text" placeholder="User ID" name="userId" value="<?php echo $userId ?>" required readonly>
 
         <label>Full Name:</label>
         <input type="text" placeholder="Full Name" value="<?php echo $fullName; ?>" name="fullName" required>
