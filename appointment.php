@@ -12,7 +12,6 @@
       padding: 0;
       box-sizing: border-box;
     }
-    
     label {
       display: block;
       margin-top: 10px;
@@ -65,7 +64,7 @@
     form select {
       padding: 8px 16px;
       font-size: 20px;
-      background-color: #4CAF50;
+      background-color: #019bac;
       color: white;
       border: none;
       cursor: pointer;
@@ -114,8 +113,8 @@
 <body>
 
 <section class="section hero">
-    <div class="container" align='center' style="border: 1px solid white; padding: 30px; right: 8%;">
-      <h1 style="font-size: 30px;">Schedule an Appointment</h1>
+    <div class="container" align='center' style="border: 1px solid white; padding: 30px; right: 8%; color: white;">
+      <h1 style="font-size: 30px; color: white;">Schedule an Appointment</h1>
       <form method="POST" action="php/addAppointmentData.php">
         <label for="date">Date:</label>
         <select name="date" required style="text-align: center;">
@@ -176,7 +175,7 @@
           ?>
         </select>
         <label for="fullName">Patient Name:</label>
-        <input type="text" name="fullName" placeholder="Patient Full Name" required autocomplete="off"><br><br>
+        <input type="text" name="fullName" placeholder="Patient Full Name" required autocomplete="off" autofocus style="border: none;"><br><br>
         <button type="button" onclick="goBack();" style="background-color: white; color: hsl(182, 100%, 35%); border: 2px solid hsl(182, 100%, 35%);
               padding: 10px 20px; cursor: pointer;border-radius: 8px;">Cancel</button>
         <input type="submit" value="Submit" style="margin-left: 20px;">
