@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Add Appointment</title>
+  <title>Schedule an Appointment</title>
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
   <style>
     *,
@@ -32,22 +32,28 @@
     
     input[type=submit],
     input[type=button] {
-      padding: 8px 16px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
+      background-color: white;
+      color: hsl(182, 100%, 35%);
+      border: 2px solid hsl(182, 100%, 35%);
+      padding: 10px 20px;
       cursor: pointer;
-      border-radius: 20px;
-      transition: transform solid ease-in-out 0.3s;
-      font-size: 20px;
+      border-radius: 8px;
+      transition: transform ease 0.3s;
     }
     
     input[type=submit]:hover,
     input[type=button]:hover {
-      background-color: #45a050;
-      transform: scale(1.3);
+      transform: scale(1.1);
     }
     
+    button {
+      transition: transform 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
     .error {
       color: red;
     }
@@ -80,26 +86,43 @@
       padding-block: 120px;
     }
     .hero {
+      background-image: url('images/hero-bg.png');
       background-color: hsl(186, 100%, 19%);
       --section-padding: 200px;
       background-repeat: no-repeat;
       background-size: cover;
+    }
+    @media(max-width: 1100px){
+      .hero-banner {
+        display: none;
+      }
+      .hero {
+        background: none;
+      }
+      body {
+      background-color: hsl(186, 100%, 19%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      }
+      .container {
+        top: 12%;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<section class="section hero" style="background-image: url('images/hero-bg.png')">
-    <div class="container" align='center'>
-      <h2>Schedule an Appointment</h2>
+<section class="section hero">
+    <div class="container" align='center' style="border: 1px solid white; padding: 30px; right: 8%;">
+      <h1 style="font-size: 30px;">Schedule an Appointment</h1>
       <form method="POST" action="php/addAppointmentData.php">
         <label for="date">Date:</label>
-        <select name="date" required>
+        <select name="date" required style="text-align: center;">
           <?php
           // Get the current date
           $currentDate = date('Y-m-d');
-
+          echo "<option>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSelect a Date&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</option>";
           // Generate options for the next five days
           for ($i = 1; $i <= 5; $i++) {
             $futureDate = strtotime("+$i day");
@@ -110,10 +133,11 @@
         </select>
 
         <label for="time">Time:</label>
-        <select name="time" required>
+        <select name="time" required style="text-align: center;">
           <?php
           $startTime = strtotime("10:00 AM");
           $endTime = strtotime("04:00 PM");
+          echo "<option>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSelect Time &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</option>";
 
           while ($startTime <= $endTime) {
             $formattedTime = date("h:i A", $startTime);
@@ -125,13 +149,13 @@
 
 
         <label for="doctorId">Doctor:</label>
-        <select name="doctorId" required onchange="showDoctorInfo(this)">
+        <select name="doctorId" required onchange="showDoctorInfo(this)" style="text-align: center;">
           <?php
           // Connect to the database and retrieve the doctor data
           include 'php/connectToDatabase.php';
           $query = "SELECT doctorId, fullName, speciality, flag FROM doctor";
           $result = mysqli_query($connection, $query);
-          echo "<option>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Select a Doctor</option>";
+          echo "<option>Select a Doctor</option>";
 
           // Loop through the query result and generate the options
           while ($row = mysqli_fetch_assoc($result)) {
@@ -153,8 +177,9 @@
         </select>
         <label for="fullName">Patient Name:</label>
         <input type="text" name="fullName" placeholder="Patient Full Name" required autocomplete="off"><br><br>
-
-        <input type="submit" value="Submit">
+        <button type="button" onclick="goBack();" style="background-color: white; color: hsl(182, 100%, 35%); border: 2px solid hsl(182, 100%, 35%);
+              padding: 10px 20px; cursor: pointer;border-radius: 8px;">Cancel</button>
+        <input type="submit" value="Submit" style="margin-left: 20px;">
       </form>
   </div>
 
@@ -164,6 +189,11 @@
 
         </div>
       </section>
+      <script>
+      function goBack() {
+        window.location.href = "index.php";
+      }
+      </script>
 </body>
 
 </html>
