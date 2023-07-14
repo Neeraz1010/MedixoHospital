@@ -4,8 +4,6 @@
     table {
       width: 100%;
       margin-top: 66px;
-    border: 1px solid hsl(186, 100%, 19%);
-    border-radius: 22px;
     }
     a {
       border: 1px solid transparent;
@@ -33,8 +31,7 @@
     margin-top: 51px;
     padding: 1px 6px;
     padding-bottom: 45px;
-}
-    
+    }
     form {
       margin-bottom: 16px;
     }
@@ -267,16 +264,16 @@ echo "
     <h1>Add</h1>
     <div class="addForm">
       <label>User Id :</label>
-      <input type="text" name="userId"  placeholder="User Id given by Hospital" required>
+      <input type="text" name="userId"  placeholder="User Id given by Hospital" required autocomplete="off">
       
       <label>Full Name :</label>
-      <input type="text" name="fullName"  placeholder="Full Name" required>
+      <input type="text" name="fullName"  placeholder="Full Name" required autocomplete="off">
       
       <label>Phone Number :</label>
-      <input type="text" name="phoneNumber"  placeholder="Phone Number" required>
+      <input type="text" name="phoneNumber"  placeholder="Phone Number" required autocomplete="off">
 
       <label>Role:</label>
-      <input type="text" placeholder="1 -> User | 2 -> Admin" name="role" required>
+      <input type="text" placeholder="1 -> User | 2 -> Admin" name="role" required autocomplete="off" value="1">
       <button class="add" type="submit" style="width: 75px; height: 34px;border: 1px solid transparent; border-radius: 20px">Add</button>
       
     </div>
