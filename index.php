@@ -307,28 +307,23 @@
             </li>
 
             <?php
-            include 'php/connectToDatabase.php'; // Assuming you have a file to establish the database connection
-            
+            include 'php/connectToDatabase.php';
+
             // Query to fetch doctor data
             $query = "SELECT fullName, speciality FROM doctor";
             $result = mysqli_query($connection, $query);
 
-            // Check if there are any doctors
             if (mysqli_num_rows($result) > 0) {
-              // Array of icon numbers
               $icons = array(1, 2, 3, 4, 5, 6, 7);
 
-              // Loop through each row and generate listing card
               while ($row = mysqli_fetch_assoc($result)) {
                 $fullName = $row['fullName'];
                 $speciality = $row['speciality'];
 
                 if (!empty($icons)) {
-                  // Randomly select an icon number
                   $randomIcon = array_rand($icons);
                   $iconNumber = $icons[$randomIcon];
 
-                  // Remove the selected icon number from the array
                   unset($icons[$randomIcon]);
                 } else {
                   $icons = array(1, 2, 3, 4, 5, 6, 7);
@@ -488,9 +483,7 @@
           currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
         }
 
-        setInterval(rotateQuotes, 5000); // Change the time interval (in milliseconds) as needed
-
-        // Initial quote rotation
+        setInterval(rotateQuotes, 5000);
         rotateQuotes();
       </script>
 
