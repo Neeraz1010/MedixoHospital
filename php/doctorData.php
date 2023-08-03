@@ -61,8 +61,63 @@
     form button:hover {
       transform: scale(1.1);
     }
+
+    .btnGoBack {
+        background-color: hsl(182, 100%, 35%);
+        color: hsl(0, 0%, 100%);
+        font-weight: 700;
+        padding: 12px 36px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      .has-before,
+      .has-after {
+        position: relative;
+        z-index: 1;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .title-md {
+        font-size: 16px;
+      }
+
+      .btnGoBack:is(:hover, :focus-visible)::before {
+        transform: translateX(100%);
+      }
+      .btnGoBack::before {
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: hsl(0, 0%, 13%);
+        border-radius: 6px;
+        transition: 0.5s ease;
+        z-index: -1;
+      }
+      .has-before::before,
+      .has-after::after {
+        content: "";
+        position: absolute;
+      }
     </style>
 </style>
+<div style="width: 10%; margin: 10px 10px; font-size: 10px">
+      <a
+        href="adminPanel.php"
+        class="btnGoBack has-before title-md"
+        style="height: 15px"
+        >Go Back</a
+      >
+  </div>
+  <br>
 <?php
 include "connectToDatabase.php";
 
@@ -108,13 +163,6 @@ $result->free_result();
 $connection->close();
 ?>
 <br>
-<button onclick="goBack();" style="padding: 8px 16px; background-color: #4CAF50; color: white; border: none; border-radius: 10px; cursor: pointer; margin-left: 2%;">Go Back</button>
-    <script>
-          function goBack() {
-              window.location.href = "adminPanel.php";
-          }
-
-    </script>
     <br><br>
     <hr>
     <h1 align="center">Add New Doctor</h1>

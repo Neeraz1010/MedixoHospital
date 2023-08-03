@@ -46,6 +46,21 @@ CREATE TABLE appointments (
   FOREIGN KEY (doctorId) REFERENCES doctor(doctorId)
 );
 
+-- Create the `Services` table
+CREATE TABLE services (
+  serviceId INT PRIMARY KEY AUTO_INCREMENT,
+  icon VARCHAR(255) NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  description TEXT NOT NULL
+);
+
+INSERT INTO services (icon, title, description) VALUES
+('images/icon-1.png', 'ENT', 'ENT, short for Ear, Nose, and Throat, is a specialized medical field that focuses on diagnosing and treating disorders and conditions related to the ears, nose, throat, and related structures.'),
+('images/icon-2.png', 'Neurology', 'Neurology is a medical specialty that focuses on the diagnosis and treatment of disorders related to the nervous system. This includes the brain, spinal cord, and peripheral nerves.'),
+('images/icon-3.png', 'Pulmonology', 'Pulmonology is a specialized medical field that focuses on diagnosing and treating disorders and conditions related to the respiratory system, including the lungs, airways, and chest.'),
+('images/icon-4.png', 'Orthopedics', 'Orthopedics is a medical specialty that focuses on the diagnosis, treatment, and prevention of conditions and injuries related to the musculoskeletal system.');
+
+
 INSERT INTO doctor (doctorId, fullName, phoneNumber, speciality, flag)
 VALUES (210630, 'Anjan Baniya', '9823455484', 'Psychiatry', '1');
 

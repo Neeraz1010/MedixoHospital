@@ -46,12 +46,13 @@
             <a href="index.php" class="navbar-link title-md">Home</a>
           </li>
 
-          <li class="navbar-item">
-            <a href="#doctorsListings" class="navbar-link title-md">Doctors</a>
-          </li>
-
+          
           <li class="navbar-item">
             <a href="#serviceBar" class="navbar-link title-md">Services</a>
+          </li>
+          
+          <li class="navbar-item">
+            <a href="#doctorsListings" class="navbar-link title-md">Doctors</a>
           </li>
 
           <li class="navbar-item">
@@ -116,102 +117,43 @@
 
 
       <!-- ***************** Service ********************** -->
+      <?php include 'php/connectToDatabase.php'; ?>
       <section class="service">
         <div class="container" id="serviceBar">
-
           <ul class="service-list">
 
-            <li>
-              <div class="service-card">
-
-                <div class="card-icon">
-                  <img src="images/icon-1.png" width="71" height="71" loading="lazy" alt="icon">
+            <?php
+            $query = "SELECT * FROM services LIMIT 4";
+            $result = mysqli_query($connection, $query);
+            while ($row = mysqli_fetch_assoc($result)) {
+              $iconSrc = $row['icon'];
+              $title = $row['title'];
+              $description = $row['description'];
+              ?>
+              <li>
+                <div class="service-card">
+                  <div class="card-icon">
+                    <img src="<?php echo $iconSrc; ?>" width="71" height="71" alt="icon">
+                  </div>
+                  <h3 class="headline-sm card-title">
+                    <a href="#"><?php echo $title; ?></a>
+                  </h3>
+                  <p class="card-text" style="text-align: justify;">
+                    <?php echo $description; ?>
+                  </p>
                 </div>
-
-                <h3 class="headline-sm card-title">
-                  <a href="#">ENT</a>
-                </h3>
-
-                <p class="card-text" style="text-align: justify;">
-                  ENT, short for Ear, Nose, and Throat, is a specialized medical field that focuses on 
-                  diagnosing and treating disorders and conditions related to the ears, nose, throat, and related structures.
-                </p>
-
-                <a href="#" class="btn-circle"><img src="images/arrowRight.png" alt="Arrow Pointing Right"
-                    style="height: 20px;"></a>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="service-card">
-
-                <div class="card-icon">
-                  <img src="images/icon-2.png" width="71" height="71" alt="icon">
-                </div>
-
-                <h3 class="headline-sm card-title">
-                  <a href="#">Neurology</a>
-                </h3>
-
-                <p class="card-text" style="text-align: justify;">
-                 Neurology is a medical specialty that focuses on the diagnosis and treatment of disorders related to the nervous system. This includes the brain, spinal cord, and peripheral nerves. 
-                 <br><br>
-                </p>
-
-                <a href="#" class="btn-circle"><img src="images/arrowRight.png" alt="Arrow Pointing Right"
-                    style="height: 20px;"></a>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="service-card">
-
-                <div class="card-icon">
-                  <img src="images/icon-3.png" width="71" height="71" alt="icon">
-                </div>
-
-                <h3 class="headline-sm card-title">
-                  <a href="#">Pulmonology</a>
-                </h3>
-
-                <p class="card-text" style="text-align: justify;">
-                  Pulmonology is a specialized field in medicine that focuses on the diagnosis, treatment, and management of diseases related to the respiratory system. 
-                  <br><br><br>
-                </p>
-
-                <a href="#" class="btn-circle"><img src="images/arrowRight.png" alt="Arrow Pointing Right"
-                    style="height: 20px;"></a>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="service-card">
-
-                <div class="card-icon">
-                  <img src="images/icon-4.png" width="71" height="71" alt="icon">
-                </div>
-
-                <h3 class="headline-sm card-title">
-                  <a href="#">Orthopedics</a>
-                </h3>
-
-                <p class="card-text" style="text-align: justify;">
-                 Orthopedics is a medical specialty that focuses on the diagnosis, treatment, and prevention of conditions and injuries related to the musculoskeletal system. 
-                </p><br><br>
-
-                <a href="#" class="btn-circle"><img src="images/arrowRight.png" alt="Arrow Pointing Right"
-                    style="height: 20px;"></a>
-
-              </div>
-            </li>
-
+              </li>
+            <?php } ?>
           </ul>
-
+          <div style="text-align: center;">
+            <a href="php/viewMoreServices.php" class="btn has-before title-md" style=" text-align: center; margin-left: 975px; background-color: hsl(182, 100%, 35%); color: white; width: 197px; border: none; padding: 10px 20px; cursor: pointer; border-radius: 8px; margin-top: 20px;">View More Services</a>
+          </div>
         </div>
       </section>
+            
+      <?php
+      mysqli_close($connection);
+      ?>
 
 
 
@@ -352,10 +294,7 @@
 
             mysqli_close($connection);
             ?>
-
-
           </ul>
-
         </div>
         <br>
       </section>
