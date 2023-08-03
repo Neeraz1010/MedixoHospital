@@ -22,7 +22,7 @@
   <header class="header" data-header>
     <div class="container">
 
-      <a href="#" class="logo">
+      <a href="index.php" class="logo">
         <img src="images/medixoLogoSmall.png" width="136" height="46" alt="medixo home" styl>
       </a>
 
@@ -296,6 +296,7 @@
 
       <!-- ********************* Listing of Services ************************* -->
       <section class="section listing" id="doctorsListings">
+        <br>
         <div class="container">
 
           <ul class="grid-list">
@@ -356,6 +357,7 @@
           </ul>
 
         </div>
+        <br>
       </section>
 
       <!-- ************************** Footer ***************************  -->
@@ -366,7 +368,7 @@
 
             <div class="footer-brand">
 
-              <a href="#" class="logo">
+              <a href="index.php" class="logo">
                 <img src="images/medixoLogoSmall.png" width="136" height="46" alt="Medixo logo">
               </a>
 
@@ -384,7 +386,7 @@
 
                     <p>
                       Inquiries : <a href="mailto:Info@medixohospital.com"
-                        class="contact-link">Info@medixohospital.com</a>
+                        class="contact-link">info@medixohospital.com</a>
                     </p>
                   </div>
 
