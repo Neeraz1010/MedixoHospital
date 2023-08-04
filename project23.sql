@@ -41,8 +41,9 @@ CREATE TABLE appointments (
   appointmentId INT PRIMARY KEY AUTO_INCREMENT,
   date DATE NOT NULL,
   time TIME NOT NULL,
-  doctorId INT,
-  fullName VARCHAR(255),
+  doctorId INT NOT NULL,
+  fullName VARCHAR(255) NOT NULL,
+  status TINYINT NOT NULL DEFAULT 0,
   FOREIGN KEY (doctorId) REFERENCES doctor(doctorId)
 );
 
@@ -77,6 +78,7 @@ SELECT * FROM appointments;
 
 
 DROP TABLE doctor;
+DROP TABLE appointments;
 
 
 
