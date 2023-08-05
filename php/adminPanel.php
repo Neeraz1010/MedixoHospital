@@ -2,7 +2,7 @@
   <link rel="shortcut icon" href="../favicon.svg" type="image/svg+xml">
   <style>
       .btnGoBack {
-        background-color: hsl(182, 100%, 35%);
+        background-color: hsl(186, 100%, 19%);
         color: hsl(0, 0%, 100%);
         font-weight: 700;
         padding: 12px 36px;

@@ -3,7 +3,7 @@
 <style>
           table {
       width: 100%;
-      border-collapse: collapse;
+      
     }
     a {
       text-decoration: none;
@@ -16,18 +16,14 @@
     th, td {
       padding: 8px;
       text-align: center;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid transparent;
     }
-    <style>
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
+    
     a {
       text-decoration: none;
       color: #019BA9;
       transition: color 0.2s ease;
-    }s
+    }
     form {
       margin-bottom: 16px;
     }
@@ -35,7 +31,7 @@
       text-align: center;
       padding: 8px;
       width: 170px;
-      border-color: blue;
+      border-color: hsl(186, 100%, 19%);
       border-radius: 20px;
     }
     input[type=submit] {
@@ -48,9 +44,32 @@
     input[type=submit]:hover {
       background-color: #45a049;
     }
+    .addForm button
+    {
+      color: white;
+      background-color: hsl(186, 100%, 19%);
+      border: 1px solid transparent;
+    }
     .addForm button:hover {
-      color: #019BA9;
+      color: hsl(186, 100%, 19%);
+      background-color: white;
       cursor: pointer;
+    }
+
+    .edit
+    {
+      margin-left: 10px;
+    padding: 2px 8px;
+    }
+    .edit:hover
+    {
+      color: hsl(186, 100%, 19%);
+      background-color: white;
+    }
+    .delete:hover
+    {
+      background-color: white;
+      color: hsl(186, 100%, 19%);
     }
     form button {
       transition: transform ease 0.3s;
@@ -63,7 +82,7 @@
     }
 
     .btnGoBack {
-        background-color: hsl(182, 100%, 35%);
+        background-color: hsl(186, 100%, 19%);
         color: hsl(0, 0%, 100%);
         font-weight: 700;
         padding: 12px 36px;
@@ -73,6 +92,10 @@
         border-radius: 6px;
         overflow: hidden;
       }
+      .btnGoBack:hover{
+        color: white;
+        background-color:hsl(186, 100%, 19%) ;
+      }
 
       .has-before,
       .has-after {
@@ -81,8 +104,13 @@
       }
 
       a {
-        color: inherit;
+        border: 1px solid transparent;
+        background-color: hsl(186, 100%, 19%);
+        color: white;
+        border-radius: 5px;
+        padding: 2px 4px;
         text-decoration: none;
+        transition: color 0.2s ease;
       }
 
       .title-md {
@@ -91,6 +119,7 @@
 
       .btnGoBack:is(:hover, :focus-visible)::before {
         transform: translateX(100%);
+      
       }
       .btnGoBack::before {
         top: 0;
@@ -117,6 +146,9 @@
         >Go Back</a
       >
   </div>
+  <hr>
+      <h1 align="center" style="padding: 8px; color: hsl(186, 100%, 19%); position: relative;">Doctor Data</h1>
+    <hr>
   <br>
 <?php
 include "connectToDatabase.php";
@@ -126,7 +158,7 @@ $result = $connection->query($selectQuery);
 $data = mysqli_fetch_all($result);
 
 echo "<table>
-  <tr>
+  <tr style='background-color: hsl(186, 100%, 19%); color: white;'>
       <th>S.N</th>
       <th>Doctor ID</th>
       <th>Full Name</th>
@@ -146,8 +178,8 @@ if ($result->num_rows > 0) {
                                 <td>{$individual_data[2]}</td>
                                 <td>{$individual_data[3]}</td>
                                 <td>{$individual_data[4]}</td>
-                <td><a href='deleteDoctorData.php?doctorId=$individual_data[0]&fullName=$individual_data[1]&phoneNumber=$individual_data[2]&speciality=$individual_data[3]&flag=$individual_data[4]'>| Delete |
-                  <a href='editDoctorData.php?doctorId=$individual_data[0]&fullName=$individual_data[1]&phoneNumber=$individual_data[2]&speciality=$individual_data[3]&flag=$individual_data[4]'>Edit |</a></td>
+                <td><a class='delete' href='deleteDoctorData.php?doctorId=$individual_data[0]&fullName=$individual_data[1]&phoneNumber=$individual_data[2]&speciality=$individual_data[3]&flag=$individual_data[4]'> Delete
+                  <a class='edit' href='editDoctorData.php?doctorId=$individual_data[0]&fullName=$individual_data[1]&phoneNumber=$individual_data[2]&speciality=$individual_data[3]&flag=$individual_data[4]'>Edit </a></td>
               </tr>";
     $snumber++;
   }
@@ -165,7 +197,9 @@ $connection->close();
 <br>
     <br><br>
     <hr>
-    <h1 align="center">Add New Doctor</h1>
+    <h1 align="center" style="padding: 8px; color: hsl(186, 100%, 19%); position: relative;">Add New Doctor</h1>
+    <hr>
+    <br><br>
 <form method="POST" action="addDoctorData.php" class="addForm">
     <label for="doctorId">Doctor ID:</label>
     <input type="text" placeholder="Doctor Id"  name="doctorId" id="doctorId" required autocomplete="off">
