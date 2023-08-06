@@ -184,12 +184,12 @@ if ($result->num_rows > 0) {
     $snumber++;
   }
 
-  echo "</table>";
 } else {
   echo "<tr><td colspan='6'>
-          No doctors found.
-          </td></tr>";
+  No doctors found.
+  </td></tr>";
 }
+echo "</table>";
 
 $result->free_result();
 $connection->close();
