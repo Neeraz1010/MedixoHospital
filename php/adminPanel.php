@@ -164,7 +164,7 @@
       background-color: white;
     }
     </style>
-    <div style="width: 10%; margin: 10px 10px; font-size: 10px">
+    <div style="width: 135px; margin: 10px 10px; font-size: 10px">
       <a
         href="../scheduleAppointment.html"
         class="btnGoBack has-before title-md"

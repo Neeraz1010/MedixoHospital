@@ -13,14 +13,37 @@
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
+<style>
+.goog-te-banner-frame {
+   display: none !important;
+}
 
+/* Show only the translation icon */
+.goog-te-gadget {
+    display: block !important;
+}
+
+/* Hide the tooltip that appears on hover */
+.goog-tooltip {
+    display: none !important;
+}
+
+/* Hide the tooltip arrow that appears on hover */
+.goog-tooltip-arrow {
+    display: none !important;
+}
+</style>
 <body id="top" data-preloader>
+<div id="google_translate_element" style="display: none;"></div>
 
-  <!-- *************** Header ******************* -->
-  
-  <header class="header" data-header>
-    <div class="container">
+<!-- *************** Header ******************* -->
+
+<header class="header" data-header>
+  <div class="container">
+      <button onclick="changeLanguage('en')">English</button>
+      <button onclick="changeLanguage('ne')">Nepali</button>
 
       <a href="index.php" class="logo">
         <img src="images/medixoLogoSmall.png" width="136" height="46" alt="medixo home" styl>
@@ -130,19 +153,19 @@
               $title = $row['title'];
               $description = $row['description'];
               ?>
-                        <li>
-                          <div class="service-card">
-                            <div class="card-icon">
-                              <img src="<?php echo $iconSrc; ?>" width="71" height="71" alt="icon">
-                            </div>
-                            <h3 class="headline-sm card-title">
-                              <a href="#"><?php echo $title; ?></a>
-                            </h3>
-                            <p class="card-text" style="text-align: justify;">
-                              <?php echo $description; ?>
-                            </p>
-                          </div>
-                        </li>
+                  <li>
+                    <div class="service-card">
+                      <div class="card-icon">
+                        <img src="<?php echo $iconSrc; ?>" width="71" height="71" alt="icon">
+                      </div>
+                      <h3 class="headline-sm card-title">
+                        <a href=""><?php echo $title; ?></a>
+                      </h3>
+                      <p class="card-text" style="text-align: justify;">
+                        <?php echo $description; ?>
+                      </p>
+                    </div>
+                  </li>
             <?php } ?>
           </ul>
           <div style="text-align: center;">
@@ -427,6 +450,28 @@
         setInterval(rotateQuotes, 5000);
         rotateQuotes();
       </script>
+       <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+  }
+
+  function changeLanguage(languageCode) {
+    // Set the target language for translation
+    var googleTranslateElement = document.getElementById('google_translate_element');
+    var translateTarget = googleTranslateElement.querySelector('.goog-te-combo');
+    translateTarget.value = languageCode;
+
+    // Trigger the change event to apply translation
+    var event = new Event('change');
+    translateTarget.dispatchEvent(event);
+  }
+</script>
+
 
 </body>
 
