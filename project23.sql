@@ -76,7 +76,23 @@ VALUES (210623, 'Prakash Ghimire', '9821314151', 'Gynecology', '1'),
 (210633, 'Anjan Phuyal', '9821314151', 'Pulmonology', '1'),
 (210621, 'Suman Sigdel', '9821314151', 'Orthopedics', '1'),
 (210622, 'Sanjog Gurung', '9821314151', 'Pediatrics', '1'),
-(210624, 'Sijan Rai', '9821314151', 'Osteology', '1');
+(210624, 'Sijan Rai', '9821314151', 'Osteology', '1'),
+(210625, 'Ashish Subedi', '9821314151', 'ENT', '1'),
+(210626, 'Rushab Khadka', '9821314151', 'Neurology', '1'),
+(210627, 'Alish Khadgi', '9821314151', 'Cardiology', '1'),
+ (210628, 'Hari Gopal Yadav', '9821314151', 'Radiology', '1');
+ 
+ INSERT INTO userLogin (userId, fullName, phoneNumber, role)
+VALUES
+    (210623, 'Prakash Ghimire', '9821314151', 3),
+    (210633, 'Anjan Phuyal', '9821314151', 3),
+    (210621, 'Suman Sigdel', '9821314151', 3),
+    (210622, 'Sanjog Gurung', '9821314151', 3),
+    (210624, 'Sijan Rai', '9821314151', 3),
+    (210625, 'Ashish Subedi', '9821314151', 3),
+    (210626, 'Rushab Khadka', '9821314151', 3),
+    (210627, 'Alish Khadgi', '9821314151', 3),
+    (210628, 'Hari Gopal Yadav', '9821314151', 3);
 
 SELECT * FROM userLogin;
 SELECT * FROM doctor;
