@@ -153,23 +153,23 @@
               $title = $row['title'];
               $description = $row['description'];
               ?>
-                        <li>
-                          <div class="service-card">
-                            <div class="card-icon">
-                              <img src="<?php echo $iconSrc; ?>" width="71" height="71" alt="icon">
-                            </div>
-                            <h3 class="headline-sm card-title">
-                              <a href="php/viewMoreServices.php"><?php echo $title; ?></a>
-                            </h3>
-                            <p class="card-text" style="text-align: justify;">
-                              <?php echo $description; ?>
-                            </p>
-                          </div>
-                        </li>
+                              <li>
+                                <div class="service-card">
+                                  <div class="card-icon">
+                                    <img src="<?php echo $iconSrc; ?>" width="71" height="71" alt="icon">
+                                  </div>
+                                  <h3 class="headline-sm card-title">
+                                    <a href="php/viewMoreServices.php"><?php echo $title; ?></a>
+                                  </h3>
+                                  <p class="card-text" style="text-align: justify;">
+                                    <?php echo $description; ?>
+                                  </p>
+                                </div>
+                              </li>
             <?php } ?>
           </ul>
           <div style="text-align: center;">
-            <a href="php/viewMoreServices.php" class="btn has-before title-md" style=" text-align: center; margin-left: 975px; background-color: hsl(182, 100%, 35%); color: white; width: 197px; border: none; padding: 10px 20px; cursor: pointer; border-radius: 8px; margin-top: 20px;">View More Services</a>
+            <a href="php/viewMoreServices.php" class="btn has-before title-md" style=" text-align: center; margin-left: 70vw; background-color: hsl(182, 100%, 35%); color: white; width: 197px; border: none; padding: 10px 20px; cursor: pointer; border-radius: 8px; margin-top: 5vh;">View More Services</a>
           </div>
         </div>
       </section>

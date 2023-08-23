@@ -672,6 +672,108 @@ body.nav-active {
 
 
 /* *************** Media Query ******************* */
+@media (max-width: 767px) {
+  .container {
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  .header .btn {
+    display: none;
+  }
+
+  .nav-open-btn {
+    margin-inline-start: 0;
+  }
+
+  .header .container {
+    gap: 20px;
+    /* Adjust as needed */
+  }
+
+  .hero-title {
+    line-height: 1.25;
+    /* Adjust as needed */
+  }
+
+  .hero .wrapper {
+    display: block;
+    /* Change to block layout */
+    margin-top: 16px;
+    /* Add some spacing */
+  }
+
+  .hero-card {
+    flex-grow: initial;
+    width: 100%;
+    /* Occupy full width */
+  }
+
+  .hero-card .input-field {
+    height: auto;
+    /* Reset height */
+  }
+
+  .hero-card .btn {
+    width: 100%;
+    /* Occupy full width */
+    margin-block-start: 16px;
+    /* Add some spacing */
+  }
+
+  .service-list {
+    grid-template-columns: 1fr;
+    /* Change to single column */
+  }
+
+  .about-list {
+    display: block;
+    /* Change to block layout */
+  }
+
+  .about-banner {
+    max-width: 100%;
+    /* Occupy full width */
+    margin-inline: 0;
+    /* Reset margin */
+  }
+
+  .listing .grid-list {
+    grid-template-columns: 1fr;
+    /* Change to single column */
+  }
+
+  .listing .grid-list>li:first-child {
+    grid-column: auto;
+    /* Reset grid column */
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    /* Change to single column */
+  }
+
+  .footer-brand {
+    grid-column: auto;
+    /* Reset grid column */
+  }
+
+  .contact-list {
+    display: block;
+    /* Change to block layout */
+    gap: 16px;
+    /* Add some spacing */
+  }
+
+  .social-list {
+    margin-block-start: 16px;
+    /* Add some spacing */
+  }
+}
+
+
+
+
 @media (min-width: 768px) {
 
   .container {
