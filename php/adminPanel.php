@@ -261,6 +261,10 @@ $connection->close();
       <h1>Appointments</h1>
       <h1><?php echo $appointmentCount; ?></h1>
     </a>
+    <a href="https://dashboard.stripe.com/test/payments" class="boxForCount" target="_blank" style="text-decoration: none; color: white;">
+      <h1>Payments</h1>
+      <h1><?php echo $appointmentCount; ?></h1>
+    </a>
   </div>
 
   

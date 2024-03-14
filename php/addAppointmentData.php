@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!mysqli_query($connection, $insertQuery)) {
             $error = 'Error: ' . mysqli_error($connection);
         } else {
-            header("Location: successInAppointment.php?doctorId=$doctorId");
+            header("Location: https://buy.stripe.com/test_00g7sv7Lo8oY3wkdQQ");
             exit();
         }
     }

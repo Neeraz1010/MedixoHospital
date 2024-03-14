@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "";
 $databaseName = "medixohospital";
 
 $connection = mysqli_connect($servername, $username, $password, $databaseName);
