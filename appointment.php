@@ -110,9 +110,9 @@
   </style>
 </head>
 
-<body>
+<body style="background-color: hsl(182, 100%, 35%);">
 
-<section class="section hero">
+<section class="section hero" style="margin-top: 45px;">
     <div class="container" align='center' style="border: 1px solid white; padding: 30px; right: 8%; color: white;">
       <h1 style="font-size: 30px; color: white;">Schedule an Appointment</h1>
       <form method="POST" action="php/addAppointmentData.php">
